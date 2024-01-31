@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.displayInput {
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.animationActive {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+.animationUnactive {
+  opacity: 0;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.quote{
+  font-family: 'Great Vibes', cursive;
+}
+
+.Morning{
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1684487747385-442d674962f2) no-repeat center;background-size:cover;
+ 
+
+}
+.Afternoon{
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/two-books-on-wood-plank-LNwn_A9RGHo) no-repeat center;background-size:cover;
+  
+
+}
+.Evening{
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/black-computer-monitor-turned-on-beside-black-computer-keyboard-rMyel7micAg) no-repeat center;background-size:cover
+
+  
+}
+
+ 
