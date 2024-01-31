@@ -4,7 +4,10 @@ import Todo from "./Todo";
 const DisplayTodos = ({
   data,
   setData,
-  setEdit
+  setEdit,
+  setDeleteNotificationTitle,
+ setDeleteNotification,
+ setTaskDetails,
 }) => {
 
   const[search,setSearch] = useState("");
@@ -33,6 +36,10 @@ const DisplayTodos = ({
                 data={data}
                 setData={setData}
                 setEdit={setEdit}
+                setDeleteNotificationTitle={setDeleteNotificationTitle}
+                setDeleteNotification={setDeleteNotification}
+                setTaskDetails={setTaskDetails}
+
                
       
               />

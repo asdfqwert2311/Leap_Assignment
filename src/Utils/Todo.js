@@ -9,7 +9,10 @@ const Todo = ({
  val,
  data,
  setData,
- setEdit
+ setEdit,
+ setDeleteNotificationTitle,
+ setDeleteNotification,
+ setTaskDetails,
  
 }) => {
   const [openOptions, setOpenOptions] = useState(false);
@@ -96,6 +99,11 @@ const Todo = ({
              setData={setData}
              setEdit={setEdit}
              setOpenOptions={setOpenOptions}
+             setDeleteNotificationTitle={setDeleteNotificationTitle}
+             setDeleteNotification={setDeleteNotification}
+             setTaskDetails={setTaskDetails}
+
+             
            />
          )}
        </div>

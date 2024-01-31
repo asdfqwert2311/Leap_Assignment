@@ -34,18 +34,19 @@
 }
 
 .Morning{
-  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1684487747385-442d674962f2) no-repeat center;background-size:cover;
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://drive.google.com/file/d/1N8C0C_Gvoh0CyxI9JEgIoeRvECTeNN9D/view?usp=sharing) no-repeat center;background-size:cover;
  
 
 }
 .Afternoon{
-  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/two-books-on-wood-plank-LNwn_A9RGHo) no-repeat center;background-size:cover;
+  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://drive.google.com/file/d/1N8C0C_Gvoh0CyxI9JEgIoeRvECTeNN9D/view?usp=sharing) no-repeat center;background-size:cover;
   
 
 }
 .Evening{
-  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/black-computer-monitor-turned-on-beside-black-computer-keyboard-rMyel7micAg) no-repeat center;background-size:cover
-
+  background: linear-gradient(rgba(248, 48, 48, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.com/photos/a-plane-flying-in-the-sky-at-sunset-99H83dNA5-k) no-repeat center;
+  background-size: cover;
+  
   
 }
 

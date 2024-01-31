@@ -13,9 +13,10 @@ const TasksOptions = ({
  val,
  setEdit,
  setOpenOptions,
- index
+ setDeleteNotificationTitle,
+ setDeleteNotification,
+ index,
 }) => {
-
 
  const {setIndex} = useContext(DataContext)
 
@@ -23,10 +24,30 @@ const TasksOptions = ({
    const doneData = data.map((val) =>
      val.id === id ? { ...val, check: !val.check } : val
    );
+
    setData(doneData);
    setOpenOptions(false)
    localStorage.setItem("todoItems", JSON.stringify(doneData));
  };
+ 
+ const handleDelete = (isData) => {
+  const deleteData = data.filter((val) => val.id !== isData.id);
+  setData(deleteData);
+  localStorage.setItem("todoItems", JSON.stringify(deleteData));
+
+
+  setDeleteNotificationTitle(isData.title);
+
+
+  setDeleteNotification(true);
+  setOpenOptions(false)
+  setTimeout(() => {
+    setDeleteNotification(false);
+    setDeleteNotificationTitle("");
+  }, 4000);
+};
+
+
 
  return (
    <div className="absolute z-10 w-[215px] shadow bg-white top-8 left-0 max-xl:-left-48 p-3 rounded-2xl">
@@ -61,7 +82,7 @@ const TasksOptions = ({
        </li>
        <li
          
-         className="max-sm:text-sm flex items-center gap-2 cursor-pointer hover:bg-slate-100 py-3 px-2 rounded-md"
+         onClick={() => handleDelete(val)} className="max-sm:text-sm flex items-center gap-2 cursor-pointer hover:bg-slate-100 py-3 px-2 rounded-md"
        >
          <MdDelete className=" text-2xl max-sm:text-xl text-slate-700" />
          Delete

@@ -56,6 +56,15 @@ const Home = () => {
              </h2>
            </div>
          )}
+          {deleteNotification && (
+           <div className="z-10 px-3 py-2 rounded-md bg-white border-l-[5px] flex items-center gap-2 border-green-600 fixed bottom-8 left-[50%] -translate-x-[50%]">
+             <FaCheck className=" text-xl text-green-500" />
+             <h2 className="max-md:text-xs text-sm text-slate-600 font-semibold">
+               Deleted Task - {deleteNotificationTitle}
+             </h2>
+           </div>
+         )}
+         
          <div
            onClick={() => navigate("/addTodo")}
            className=" fixed bottom-10 w-16 h-16 max-sm:w-14 max-sm:h-14 cursor-pointer bg-white grid place-items-center rounded-full left-[50%] -translate-x-[50%]"

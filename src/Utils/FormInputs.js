@@ -23,11 +23,9 @@ const FormInputs = ({
 
 
  const [emptyInputError, setEmptyInputError] = useState(false);
-
-
  const [nameCountError, setNameCountError] = useState("");
  const [descriptionCountError, setDescriptionCountError] = useState("");
- const [deadline, setDeadline] = useState(dayjs("2022-04-17T15:30"));
+ const [deadline, setDeadline] = useState(dayjs(new Date()));
 
 
 
