@@ -8,9 +8,32 @@ const Todo = ({
  i,
  val,
  data,
- setData
+ setData,
+ setEdit
  
 }) => {
+  const [openOptions, setOpenOptions] = useState(false);
+
+
+ const menuRef = useRef();
+
+
+ useEffect(() => {
+   let handler = (e) => {
+     if (!menuRef.current.contains(e.target)) {
+       setOpenOptions(false);
+     }
+   };
+
+
+   document.addEventListener("mousedown", handler);
+
+
+   return () => {
+     document.removeEventListener("mousedown", handler);
+   };
+ });
+
 
  return (
    <div className="flex justify-between gap-4 max-w-full items-center text-white bg-purple-800 rounded-2xl px-6 py-5 max-sm:py-4 max-sm:px-4">
@@ -55,7 +78,28 @@ const Todo = ({
          {new Date(val.deadline).toLocaleTimeString()}
        </p>
      </div>
+     <div ref={menuRef} className=" relative">
+       <SlOptionsVertical
+         onClick={() => setOpenOptions(!openOptions)}
+         className=" text-lg cursor-pointer"
+       />
 
+
+       <div
+         className={`${openOptions ? "animationActive" : "animationUnactive"}`}
+       >
+         {openOptions && (
+           <TasksOptions
+             index={i}
+             val={val}
+             data={data}
+             setData={setData}
+             setEdit={setEdit}
+             setOpenOptions={setOpenOptions}
+           />
+         )}
+       </div>
+       </div>
 
    
    </div>

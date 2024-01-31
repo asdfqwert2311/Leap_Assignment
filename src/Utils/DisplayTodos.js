@@ -3,7 +3,8 @@ import Todo from "./Todo";
 
 const DisplayTodos = ({
   data,
-  setData
+  setData,
+  setEdit
 }) => {
 
   const[search,setSearch] = useState("");
@@ -31,6 +32,7 @@ const DisplayTodos = ({
                 val={val}
                 data={data}
                 setData={setData}
+                setEdit={setEdit}
                
       
               />
