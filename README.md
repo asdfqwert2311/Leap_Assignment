@@ -2,7 +2,7 @@
 
 This ToDo List application is built using React for the frontend, Spring Boot for the backend, and MongoDB as the database. It provides a simple interface to manage tasks with features such as adding tasks, deleting tasks, editing tasks, marking tasks as completed, and searching through task descriptions.
 
-**Link for Video** : https://drive.google.com/file/d/1gF5zss5UWJsKFNENKNO0BxC4WQVe-Q9k/view?usp=sharing
+**Link for Video** : (https://drive.google.com/file/d/1gF5zss5UWJsKFNENKNO0BxC4WQVe-Q9k/view?usp=sharing)
 
 ## Features
 
