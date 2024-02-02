@@ -21,30 +21,60 @@ const TasksOptions = ({
  const {setIndex} = useContext(DataContext)
 
  const handleCheck = (id) => {
+
    const doneData = data.map((val) =>
      val.id === id ? { ...val, check: !val.check } : val
    );
 
-   setData(doneData);
-   setOpenOptions(false)
-   localStorage.setItem("todoItems", JSON.stringify(doneData));
+   console.log("doneData",doneData)
+   let arr = data.filter(val => val.id === id);
+   let obj = arr[0];
+   let {check} = obj;
+   check = !check;
+   let modifiedOjb = {...obj,check}
+
+    console.log("modified",modifiedOjb);
+
+   fetch(`http://localhost:8080/api/todos/${id}`,{
+    method:"PUT",
+    headers:{
+      Accept:"application/json",
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify(modifiedOjb),
+   }).then((res) => {
+      return  res.json();
+   }).then((newData) => {
+    setData(doneData);
+    setOpenOptions(false)
+    localStorage.setItem("todoItems", JSON.stringify(doneData));
+   })
+   .catch(err => console.log(err));
+
+  
  };
  
  const handleDelete = (isData) => {
-  const deleteData = data.filter((val) => val.id !== isData.id);
-  setData(deleteData);
-  localStorage.setItem("todoItems", JSON.stringify(deleteData));
 
-
-  setDeleteNotificationTitle(isData.title);
-
-
-  setDeleteNotification(true);
-  setOpenOptions(false)
-  setTimeout(() => {
-    setDeleteNotification(false);
-    setDeleteNotificationTitle("");
-  }, 4000);
+  fetch(`http://localhost:8080/api/todos/${isData.id}`,{
+    method:"DELETE",
+   }).then(() => {
+    const deleteData = data.filter((val) => val.id !== isData.id);
+    setData(deleteData);
+    localStorage.setItem("todoItems", JSON.stringify(deleteData));
+  
+  
+    setDeleteNotificationTitle(isData.title);
+  
+  
+    setDeleteNotification(true);
+    setOpenOptions(false)
+    setTimeout(() => {
+      setDeleteNotification(false);
+      setDeleteNotificationTitle("");
+    }, 4000);
+   })
+   .catch(err => console.log(err));
 };
 
 
@@ -68,7 +98,7 @@ const TasksOptions = ({
              description: val.description,
              check: val.check,
              currentTime: val.currentTime,
-             catagory: val.catagory,
+             deadline: val.deadline,
            });
          }}
        >

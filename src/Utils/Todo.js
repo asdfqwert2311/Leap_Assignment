@@ -39,7 +39,7 @@ const Todo = ({
 
 
  return (
-   <div className="flex justify-between gap-4 max-w-full items-center text-white bg-purple-800 rounded-2xl px-6 py-5 max-sm:py-4 max-sm:px-4">
+   <div className="flex justify-between gap-4 max-w-full items-center rounded-2xl bg-white text-black px-6 py-5 max-sm:py-4 max-sm:px-4 transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 hover:text-white hover:scale-105">
      {val.check && (
        <div className=" bg-purple-500 p-4 max-sm:p-2 rounded-xl">
          <FaCheck className=" text-4xl" />
@@ -47,7 +47,7 @@ const Todo = ({
      )}
 
 
-     <div className="black w-full">
+     <div className="black w-full hover:bg-transparent ">
        <div
          className={`flex justify-between gap-10 items-center ${
            val.description ? "mb-3 max-sm:mb-1" : "mb-0"
@@ -63,7 +63,7 @@ const Todo = ({
          <p
            className={`${
              val.check ? "line-through" : null
-           } min-w-[110px] max-sm:text-xs font-light text-gray-200`}
+           } min-w-[110px] max-sm:text-xs font-bold`}
          >
            {val.currentTime}
          </p>

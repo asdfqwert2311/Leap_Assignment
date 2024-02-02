@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, {useState,useEffect, useContext} from "react";
 import Greeting from "../Utils/Greeting";
 import DisplayTodos from "../Utils/DisplayTodos";
 import { RxPlus } from "react-icons/rx";
@@ -27,7 +27,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" w-full relative min-h-screen pb-60 bg-gradient-to-r from-purple-700 to-purple-500">
+    <div className=" w-full relative min-h-screen pb-60 bg-gradient-to-r from-white-200 from-10% via-indigo-800 via-30% to-white-100 to-90%">
       <Greeting/>
       <div className=" max-w-[1300px] px-3 m-auto">
        <div>
@@ -67,7 +67,7 @@ const Home = () => {
          
          <div
            onClick={() => navigate("/addTodo")}
-           className=" fixed bottom-10 w-16 h-16 max-sm:w-14 max-sm:h-14 cursor-pointer bg-white grid place-items-center rounded-full left-[50%] -translate-x-[50%]"
+           className=" fixed bottom-10 w-16 h-16 shadow-xl max-sm:w-14 max-sm:h-14 cursor-pointer bg-white transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-rose-400 hover:via-yellow-500 hover:to-yellow-600 hover:transform hover:scale-115 grid place-items-center rounded-full left-[50%] -translate-x-[50%]"
          >
            <RxPlus className=" text-4xl max-sm:text-3xl plusIcon" />
          </div>

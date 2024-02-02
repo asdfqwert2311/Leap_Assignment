@@ -58,7 +58,6 @@ const EditTodo = () => {
    }
  };
 
-
  const handleEditDescription = (e) => {
    let description = e.target.value;
    setEdit({
@@ -69,7 +68,6 @@ const EditTodo = () => {
      currentTime: edit.currentTime,
      deadline: edit.deadline,
    });
-
 
    if (description.length >= 200) {
      setDescriptionCountError(
@@ -92,7 +90,6 @@ const EditTodo = () => {
    });
  }
 
-
  const handleEditSubmit = (e, index) => {
    e.preventDefault();
 
@@ -107,20 +104,32 @@ const EditTodo = () => {
    } else {
      const editIndex = [...data];
      editIndex[index] = edit;
+     fetch(`http://localhost:8080/api/todos/${edit.id}`,{
+      method:"PUT",
+      headers:{
+        Accept:"application/json",
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(edit),
+     }).then((res) => {
+        return  res.json();
+     }).then((data) => {
+        setData(editIndex);
+        localStorage.setItem("todoItems", JSON.stringify(editIndex));
+        setEdit("");
+        navigate("/");
+  
+  
+        setEditNotificationTitle(edit.title);
+        setEditNotification(true);
+        setTimeout(() => {
+          setEditNotification(false);
+          setEditNotificationTitle("");
+        }, 4000);
+     })
+     .catch(err => console.log(err));
 
-
-     setData(editIndex);
-     localStorage.setItem("todoItems", JSON.stringify(editIndex));
-     setEdit("");
-     navigate("/");
-
-
-     setEditNotificationTitle(edit.title);
-     setEditNotification(true);
-     setTimeout(() => {
-       setEditNotification(false);
-       setEditNotificationTitle("");
-     }, 4000);
+    
    }
  };
 

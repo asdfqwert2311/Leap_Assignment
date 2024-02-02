@@ -29,13 +29,13 @@ const TaskDetails = () => {
 
 
   return (
-   <div className=" w-full relative min-h-screen bg-purple-600">
+   <div className=" w-full relative min-h-screen bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% shadow-xl">
      <div className=" max-w-[1300px] px-10 max-md:px-5 m-auto">
        <div>
          <TopNav title={"Task Details"} />
 
 
-         <div className=" rounded-2xl bg-purple-700 max-w-[600px] m-auto mt-16 py-10 px-8 max-sm:p-5 text-white">
+         <div className=" rounded-2xl bg-white max-w-[600px] m-auto mt-16 py-10 px-8 max-sm:p-5 text-black">
            <h1 className=" text-center text-4xl max-sm:text-2xl font-bold">
              Task
            </h1>

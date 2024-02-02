@@ -121,21 +121,37 @@ const FormInputs = ({
            check: check,
        };
 
+       fetch(`http://localhost:8080/api/todos`,{
+        method:"POST",
+        headers:{
+          Accept:"application/json",
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify(newTask),
+       }).then((res) => {
+        
+          return  res.json();
+       }).then((newData) => {
+          
+        localStorage.setItem("todoItems", JSON.stringify([...data, newTask]));
+        setData([...data, newTask]);
+        setTaskName("");
+        setTaskDescription("");
+        setEmptyInputError(false);
+        navigate("/");
+ 
+ 
+        setAddNotificationTitle(taskName);
+        setAddNotification(true);
+        setTimeout(() => {
+            setAddNotification(false);
+            setAddNotificationTitle("");
+        }, 4000);
 
-       localStorage.setItem("todoItems", JSON.stringify([...data, newTask]));
-       setData([...data, newTask]);
-       setTaskName("");
-       setTaskDescription("");
-       setEmptyInputError(false);
-       navigate("/");
-
-
-       setAddNotificationTitle(taskName);
-       setAddNotification(true);
-       setTimeout(() => {
-           setAddNotification(false);
-           setAddNotificationTitle("");
-       }, 4000);
+       })
+       .catch(err => {
+        console.log(err);
+       })
    }
 };
   

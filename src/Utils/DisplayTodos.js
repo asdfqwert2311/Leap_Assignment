@@ -52,8 +52,8 @@ const DisplayTodos = ({
 
       {data.length ? (
         <div>
-            <div className="max-md:container border text-white max-w-[700px] mt-10 max-sm:mt-2 m-auto rounded-3xl bg-gradient-to-r from-purple-500 to-purple-700 p-10 max-sm:p-5">
-           <h1 className=" text-2xl max-sm:text-base font-medium">
+            <div className="max-md:container text-b max-w-[700px] mt-10 max-sm:mt-2 m-auto text-white rounded-3xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 drop-shadow-lg p-10 transition duration-300 ease-in-out hover:transform hover:scale-105 max-sm:p-5">
+           <h1 className=" text-3xl max-sm:text-base font-semibold">
              Progress Summary
            </h1>
            <h3 className=" max-sm:text-xs">{`${data.length} ${data.length > 1 ? "Tasks" : "Task"}`}</h3>
@@ -61,7 +61,7 @@ const DisplayTodos = ({
 
            <div className="flex flex-col w-[60%] max-sm:w-[100%] mt-7 max-sm:mt-5">
              <div className="flex justify-between items-center">
-               <p className=" max-sm:text-xs">
+               <p className=" md:text-xl sm:text-sm">
                  Progress
                  <span className={` text-sm max-sm:text-xs ${handleTasksStatus() === "No tasks completed" ? "text-red-700" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-green-500"} font-semibold`}> ({handleTasksStatus()})</span>
                </p>
