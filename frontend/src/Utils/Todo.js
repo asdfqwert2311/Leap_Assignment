@@ -75,7 +75,7 @@ const Todo = ({
        >
          {val.description}
        </p>
-       <p className="text-base  italic text-xs mt-4">
+       <p className="text-base italic text-xs mt-4">
          Deadline: &nbsp;
          {new Date(val.deadline).toLocaleDateString()} {" • "}
          {new Date(val.deadline).toLocaleTimeString()}

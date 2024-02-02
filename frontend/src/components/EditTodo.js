@@ -143,7 +143,7 @@ const EditTodo = () => {
 
 
  return (
-   <div className=" w-full relative min-h-screen bg-purple-600">
+   <div className=" w-full relative min-h-screen bg-gradient-to-r from-pink-700 via-pink-600 to-pink-900">
      <div className=" max-w-[1300px] px-10 max-md:px-5 m-auto">
        <div>
          <TopNav title={"Edit Todo"} />
@@ -225,7 +225,7 @@ const EditTodo = () => {
              <div className="text-center flex gap-4 max-sm:flex-col mt-4">
                <button
                  onClick={handleCancel}
-                 className="bg-purple-400 hover:bg-purple-800 transition text-xl font-bold text-white p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full"
+                 className="shadow-xl  bg-gradient-to-r from-cyan-900 to-blue-500 hover:from-cyan-500 hover:to-blue-400 transition duration-300 ease-in-out hover:transform hover:scale-105 font-bold text-white p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full"
                >
                  Cancel
                </button>
@@ -242,7 +242,7 @@ const EditTodo = () => {
                  className={`${
                    nameCountError || descriptionCountError || !edit.id
                      ? "bg-purple-700 cursor-not-allowed text-purple-400"
-                     : "hover:bg-purple-800 text-white"
+                     : "bg-gradient-to-r from-red-900 to-red-500 hover:from-pink-500 shadow-xl hover:to-yellow-400 transition duration-300 ease-in-out hover:transform hover:scale-105 text-white "
                  } transition text-xl font-bold bg-purple-400  p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full`}
                >
                  Update
