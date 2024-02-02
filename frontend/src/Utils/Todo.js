@@ -39,7 +39,7 @@ const Todo = ({
 
 
  return (
-   <div className="flex justify-between gap-4 max-w-full items-center rounded-2xl bg-white text-black px-6 py-5 max-sm:py-4 max-sm:px-4 transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 hover:text-white hover:scale-105">
+   <div className="flex shadow-2xl justify-between gap-4 max-w-full items-center rounded-2xl bg-white text-black px-6 py-5 max-sm:py-4 max-sm:px-4 transition duration-300 ease-in-out hover:bg-gradient-to-r hover:from-rose-400 hover:via-fuchsia-500 hover:to-indigo-500 hover:text-white hover:scale-105">
      {val.check && (
        <div className=" bg-purple-500 p-4 max-sm:p-2 rounded-xl">
          <FaCheck className=" text-4xl" />

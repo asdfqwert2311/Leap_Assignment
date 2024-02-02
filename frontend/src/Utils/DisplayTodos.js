@@ -60,10 +60,10 @@ const DisplayTodos = ({
 
 
            <div className="flex flex-col w-[60%] max-sm:w-[100%] mt-7 max-sm:mt-5">
-             <div className="flex justify-between items-center">
-               <p className=" md:text-xl sm:text-sm">
+             <div className=" flex justify-between items-center">
+               <p className=" bg-red md:text-xl sm:text-sm">
                  Progress
-                 <span className={` text-sm max-sm:text-xs ${handleTasksStatus() === "No tasks completed" ? "text-red-700" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-green-500"} font-semibold`}> ({handleTasksStatus()})</span>
+                 <span className={`bg-red text-sm max-sm:text-xs ${handleTasksStatus() === "No tasks completed" ? "text-red-300" : handleTasksStatus() === "Less than half tasks completed" ? "text-red-700" : "text-green-500"} font-semibold`}> ({handleTasksStatus()})</span>
                </p>
                <p className="text-sm">{completedTask()}%</p>
              </div>
@@ -89,14 +89,6 @@ const DisplayTodos = ({
            />
            <IoMdSearch className="absolute top-[50%] left-3 -translate-y-[50%] text-purple-600 text-2xl max-sm:text-xl" />
          </div>
-
-
-
-
-
-
-
-
 
           <div className="max-md:container max-w-[700px] m-auto flex flex-col gap-4 max-sm:gap-3 pb-5">
             {searchResults.map((val, index) => (

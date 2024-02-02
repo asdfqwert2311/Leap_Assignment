@@ -160,7 +160,7 @@ const FormInputs = ({
            <form onSubmit={handleSubmit} className="max-w-[600px] m-auto">
                <div>
                    <label
-                       className={`text-sm max-sm:text-xs ${
+                       className={`text-sm shadow-xl max-sm:text-xs ${
                            nameCountError ? "text-red-500" : "text-purple-200"
                        } text-purple-200`}
                        htmlFor="taskName"
@@ -196,7 +196,7 @@ const FormInputs = ({
                        placeholder="Enter task description"
                        value={taskDescription}
                        onChange={handleDescription}
-                       className={`resize-none ${
+                       className={`resize-none shadow-xl ${
                            descriptionCountError ? "border-red-500 border-2" : "border-none"
                        }  w-full rounded-xl p-4 max-sm:p-3 mt-1 text-base max-sm:placeholder:text-sm h-48 max-sm:h-36 outline-none`}
                    ></textarea>
@@ -219,7 +219,7 @@ const FormInputs = ({
                                id="taskDeadline"
                                value={deadline}
                                onChange={(newValue) => setDeadline(newValue)}
-                               className="bg-white border-none w-full rounded-xl p-4 max-sm:p-3 text-base max-sm:placeholder:text-sm h-14 max-sm:h-12 outline-none"
+                               className="bg-white shadow-xl border-none w-full rounded-xl p-4 max-sm:p-3 text-base max-sm:placeholder:text-sm h-14 max-sm:h-12 outline-none"
                                defaultValue={dayjs(new Date())}
                            />
                        </DemoContainer>
@@ -232,7 +232,7 @@ const FormInputs = ({
                        className={`${
                            nameCountError || descriptionCountError
                                ? "bg-purple-700 cursor-not-allowed text-purple-400"
-                               : "hover:bg-purple-800 text-white "
+                               : "bg-gradient-to-r from-red-900 to-red-500 hover:from-pink-500 hover:to-yellow-400 transition duration-300 ease-in-out hover:transform hover:scale-105 text-white"
                        } transition text-xl font-bold bg-purple-400 p-4 max-sm:p-3 max-sm:text-lg rounded-xl w-full`}
                    >
                        Create Task
